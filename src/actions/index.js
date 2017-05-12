@@ -1,10 +1,8 @@
-import { combineReducers } from 'redux';
-import ContactReducer from './contact-reducer';
+import axios from "axios";
 
-const reducers = {
-  contactStore: ContactReducer
-}
-
-const rootReducer = combineReducers(reducers);
-
-export default rootReducer;
+export const client = axios.create({
+  baseURL: "http://localhost:3030",
+  headers: {
+    "Content-Type": "application/json"
+  }
+})
